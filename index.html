@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dokwi.lol</title>
+</head>
+<body>
+  <h1>Hello Dokwi!</h1>
+  <script>
+    let ws;
+    const protocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+    ws = new WebSocket(protocol + '//' + location.host);
+    ws.onmessage = (event) => {
+      console.log(event.data);
+    };
+  </script>
+</body>
+</html>
